@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install validation tools
+        run: |
+          npm init -y
+          npm install --save-dev @html-validator/cli stylelint stylelint-config-standard
+
+      - name: Validate HTML
+        run: npx html-validator --file=index.html --verbose
+
+      - name: Validate CSS
+        run: npx stylelint "styles.css" --config ./node_modules/stylelint-config-standard/index.js
