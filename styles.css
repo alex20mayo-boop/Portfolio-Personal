@@ -1,16 +1,17 @@
 ﻿:root {
-  --bg: #eef3f8;
-  --surface: #ffffff;
-  --surface-alt: #f4f7fb;
-  --text: #10203b;
-  --muted: #4b5e7b;
-  --accent: #1f5cb3;
-  --accent-dark: #163f7a;
-  --border: #d8e2ef;
-  --shadow: 0 24px 60px rgba(17, 35, 70, 0.08);
+  --bg: #07101f;
+  --surface: #0f1b32;
+  --surface-alt: #152845;
+  --surface-strong: #1b2a45;
+  --text: #e7eef6;
+  --muted: #92a7c4;
+  --accent: #5aa2ff;
+  --accent-soft: #3a8cff;
+  --border: rgba(90, 162, 255, 0.18);
+  --shadow: 0 28px 70px rgba(4, 20, 40, 0.5);
   --radius: 28px;
   --radius-sm: 18px;
-  --max-width: 1120px;
+  --max-width: 1180px;
   --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -27,7 +28,7 @@ body {
   min-height: 100vh;
   font-family: var(--font-sans);
   color: var(--text);
-  background: linear-gradient(180deg, var(--bg) 0%, #f7f9fc 100%);
+  background: radial-gradient(circle at top, #102040 0%, #07101f 42%, #020810 100%);
   line-height: 1.65;
 }
 
@@ -36,7 +37,7 @@ body {
   top: -3rem;
   left: 1rem;
   background: var(--accent);
-  color: #ffffff;
+  color: #07101f;
   padding: 0.75rem 1rem;
   border-radius: 999px;
   text-decoration: none;
@@ -61,8 +62,8 @@ a {
 
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid rgba(31, 92, 179, 0.35);
-  outline-offset: 3px;
+  outline: 3px solid rgba(90, 162, 255, 0.45);
+  outline-offset: 4px;
 }
 
 .container {
@@ -73,8 +74,8 @@ a:focus-visible {
 
 .site-header {
   padding: 1.5rem 0 0;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(10px);
+  background: rgba(7, 16, 31, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .header-content {
@@ -92,7 +93,7 @@ a:focus-visible {
   margin: 0 0 0.75rem;
   color: var(--accent);
   font-size: 0.9rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -105,7 +106,7 @@ h1 {
 
 .hero-tagline {
   margin: 0 0 1.25rem;
-  color: var(--accent-dark);
+  color: var(--accent-soft);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -139,42 +140,39 @@ h1 {
 
 .btn-primary {
   background-color: var(--accent);
-  color: #ffffff;
+  color: #07101f;
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--accent-dark);
-  border-color: var(--accent);
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .btn:hover,
 .btn:focus-visible {
-  transform: translateY(-1px);
-  box-shadow: 0 18px 35px rgba(31, 92, 179, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(90, 162, 255, 0.18);
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
-  background: rgba(31, 92, 179, 0.08);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .hero-visual {
   width: min(420px, 100%);
   justify-self: center;
-}
-
-.hero-visual {
-  min-height: 320px;
+  min-height: 340px;
   border-radius: 36px;
-  background: radial-gradient(circle at top left, rgba(31, 92, 179, 0.18), transparent 28%),
-    linear-gradient(180deg, #ffffff 0%, #e3ecf8 100%);
-  border: 1px solid rgba(31, 92, 179, 0.15);
-  box-shadow: var(--shadow);
+  background: radial-gradient(circle at top left, rgba(90, 162, 255, 0.18), transparent 30%),
+    linear-gradient(180deg, rgba(26, 44, 76, 0.94) 0%, rgba(7, 16, 31, 0.95) 100%);
+  border: 1px solid rgba(90, 162, 255, 0.16);
+  box-shadow: 0 30px 70px rgba(4, 20, 40, 0.55);
 }
 
 .site-nav {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 1.25rem 0;
 }
 
@@ -244,10 +242,10 @@ h1 {
 .education-item,
 .skill-group {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-sm);
   padding: 1.6rem;
-  box-shadow: 0 18px 35px rgba(17, 35, 70, 0.04);
+  box-shadow: 0 18px 40px rgba(4, 20, 40, 0.35);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
@@ -255,9 +253,9 @@ h1 {
 .project-card:hover,
 .skill-group:hover,
 .education-item:hover {
-  transform: translateY(-3px);
-  border-color: rgba(31, 92, 179, 0.25);
-  box-shadow: 0 28px 50px rgba(17, 35, 70, 0.08);
+  transform: translateY(-4px);
+  border-color: rgba(90, 162, 255, 0.28);
+  box-shadow: 0 30px 50px rgba(4, 20, 40, 0.45);
 }
 
 .experience-card + .experience-card,
@@ -300,11 +298,11 @@ h1 {
 }
 
 .skill-group li {
-  padding: 0.85rem 1rem;
+  padding: 0.9rem 1rem;
   background: var(--surface-alt);
   border-radius: 14px;
   color: var(--text);
-  border: 1px solid #e1e8f4;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .education-list {
@@ -313,14 +311,14 @@ h1 {
 }
 
 .contact-list li a {
-  color: var(--accent-dark);
+  color: var(--accent);
   text-decoration: none;
   font-weight: 600;
 }
 
 .contact-list li a:hover,
 .contact-list li a:focus-visible {
-  color: var(--accent);
+  color: #ffffff;
   text-decoration: underline;
 }
 
